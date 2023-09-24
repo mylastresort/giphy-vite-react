@@ -1,0 +1,39 @@
+/* gif images container styles */
+.display {
+    border-radius: 0.5rem;
+    column-count: 4;
+    column-gap: 1rem;
+    margin-block: 3rem;
+}
+
+/* changing the column count according to width viewport */
+@media (max-width: 1250px) {
+    .display {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 750px) {
+    .display {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 450px) {
+    .display {
+        column-count: 1;
+    }
+}
+
+/* gif container styles */
+.gif {
+    background-color: rgb(32, 32, 32);
+    border-radius: .5rem;
+    display: flex;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.gif>img {
+    width: 100%;
+}
