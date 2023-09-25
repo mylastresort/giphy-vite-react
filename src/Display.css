@@ -8,16 +8,35 @@
 
 /* gif container styles */
 .gif {
+    align-items: center;
     background-color: rgb(32, 32, 32);
     border-radius: .5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-bottom: 1rem;
     overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease-in-out;
 }
 
 .gif>img {
     opacity: 0;
     width: 100%;
+}
+
+.overlay {
+    background-color: black;
+    height: 100%;
+    opacity: 0.1;
+    position: absolute;
+    width: 100%;
+}
+
+.gif:hover>.overlay {
+    opacity: 0;
+}
+
+.gif:hover {
+    opacity: 1;
+    scale: 1.03;
 }
