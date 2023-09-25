@@ -1,4 +1,4 @@
-import "./Display.css"
+import "./Display.css";
 import { useSelector } from "react-redux";
 
 export default function Display() {
@@ -17,9 +17,16 @@ export default function Display() {
       <div>{current.length} results</div>
       <div className="display">
         {current.map((item) => (
-          <a key={item.id} href={item.images.original.url} className="gif">
-            <img alt={item.slug} key={item.id} src={item.images.original.url} />
-          </a>
+          <div
+            key={item.id}
+            style={{
+              aspectRatio: `${item.images.original.width}/${item.images.original.height}`,
+            }}
+            href={item.images.original.url}
+            className="gif"
+          >
+            <img key={item.id} src={item.images.original.url} />
+          </div>
         ))}
       </div>
     </>
