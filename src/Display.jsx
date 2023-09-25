@@ -26,7 +26,17 @@ export default function Display() {
             }}
             className="gif"
           >
-            <img loading="lazy" src={images.fixed_width_downsampled.url} />
+            {images.fixed_width_downsampled.webp && (
+              <source
+                srcSet={images.fixed_width_downsampled.webp}
+                type="image/webp"
+              />
+            )}
+            <img
+              loading="lazy"
+              onLoad={(e) => (e.target.style.opacity = 1)}
+              src={images.fixed_width_downsampled.url}
+            />
           </picture>
         ))}
       </div>
