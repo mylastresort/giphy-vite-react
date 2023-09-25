@@ -14,9 +14,11 @@
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-    overflow: hidden;
+    overflow: hidden;    
     position: relative;
+    top: 40px;
     transition: all 0.2s ease-in-out;
+    transition: top 0.3s ease;
 }
 
 .gif>img {
@@ -40,3 +42,12 @@
     opacity: 1;
     scale: 1.03;
 }
+
+/* .load {
+    width: 100%;
+}
+
+.load > button {
+    display: block;
+    margin: 0 auto;
+} */
