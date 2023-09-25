@@ -1,5 +1,6 @@
 import "./Display.css";
 import { useSelector } from "react-redux";
+import Picture from "./Picture";
 
 export default function Display() {
   const current = useSelector((state) => state.giphy.current);
@@ -17,16 +18,7 @@ export default function Display() {
       <div>{current.length} results</div>
       <div className="display">
         {current.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              aspectRatio: `${item.images.original.width}/${item.images.original.height}`,
-            }}
-            href={item.images.original.url}
-            className="gif"
-          >
-            <img key={item.id} src={item.images.original.url} />
-          </div>
+          <Picture images={item.images} id={item.id} key={item.id} />
         ))}
       </div>
     </>
